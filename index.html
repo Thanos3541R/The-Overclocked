@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Overclocked | Design Thinking Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">The Overclocked</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#team" class="nav-link">Team</a></li>
+                <li><a href="#design-thinking" class="nav-link">Design Thinking</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#media" class="nav-link">Media</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO / HOME ===== -->
+    <section class="hero" id="home">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-tagline animate-in">⚡ Design Thinking Project</p>
+            <h1 class="hero-title animate-in">
+                Team <span class="highlight">The Overclocked</span>
+            </h1>
+            <div class="hero-details animate-in">
+                <div class="hero-badge">
+                    <span class="badge-label">Team ID</span>
+                    <span class="badge-value">TC2 ECE 12</span>
+                </div>
+                <div class="hero-badge">
+                    <span class="badge-label">Departments</span>
+                    <span class="badge-value">ECE · EEE · IT</span>
+                </div>
+            </div>
+            <p class="hero-college animate-in">Thiagarajar College of Engineering, Madurai</p>
+            <div class="hero-buttons animate-in">
+                <a href="#team" class="btn btn-primary">Meet the Team</a>
+                <a href="#design-thinking" class="btn btn-outline">Explore Project</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll Down</p>
+        </div>
+    </section>
+
+    <!-- ===== TEAM ===== -->
+    <section class="section" id="team">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-tag">Who We Are</p>
+                <h2 class="section-title">Our Team</h2>
+                <p class="section-subtitle">Five minds. Three departments. One mission.</p>
+            </div>
+
+            <div class="team-grid">
+                <!-- Member 1 -->
+                <div class="team-card" data-delay="0">
+                    <div class="card-accent"></div>
+                    <div class="card-avatar">K</div>
+                    <h3 class="card-name">Kamalesh</h3>
+                    <p class="card-role">Team Leader</p>
+                    <div class="card-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Reg. No</span>
+                            <span class="detail-value">250391772052051</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Department</span>
+                            <span class="detail-value dept-it">IT</span>
+                        </div>
+                    </div>
+                    <div class="card-skills">
+                        <span class="skill-tag">Leadership</span>
+                        <span class="skill-tag">Strategy</span>
+                        <span class="skill-tag">Coordination</span>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="team-card" data-delay="100">
+                    <div class="card-accent"></div>
+                    <div class="card-avatar">A</div>
+                    <h3 class="card-name">Akhileshwar Subbiah</h3>
+                    <p class="card-role">Task Executor</p>
+                    <div class="card-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Reg. No</span>
+                            <span class="detail-value">250391771062106</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Department</span>
+                            <span class="detail-value dept-ece">ECE</span>
+                        </div>
+                    </div>
+                    <div class="card-skills">
+                        <span class="skill-tag">Execution</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Development</span>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="team-card" data-delay="200">
+                    <div class="card-accent"></div>
+                    <div class="card-avatar">H</div>
+                    <h3 class="card-name">Hamilton</h3>
+                    <p class="card-role">Financial Officer & Designer</p>
+                    <div class="card-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Reg. No</span>
+                            <span class="detail-value">250391771062026</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Department</span>
+                            <span class="detail-value dept-ece">ECE</span>
+                        </div>
+                    </div>
+                    <div class="card-skills">
+                        <span class="skill-tag">Finance</span>
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Creativity</span>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="team-card" data-delay="300">
+                    <div class="card-accent"></div>
+                    <div class="card-avatar">N</div>
+                    <h3 class="card-name">Nikitha</h3>
+                    <p class="card-role">Web Master</p>
+                    <div class="card-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Reg. No</span>
+                            <span class="detail-value">250391771062105</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Department</span>
+                            <span class="detail-value dept-eee">EEE</span>
+                        </div>
+                    </div>
+                    <div class="card-skills">
+                        <span class="skill-tag">Web Development</span>
+                        <span class="skill-tag">Frontend</span>
+                        <span class="skill-tag">Hosting</span>
+                    </div>
+                </div>
+
+                <!-- Member 5 -->
+                <div class="team-card" data-delay="400">
+                    <div class="card-accent"></div>
+                    <div class="card-avatar">M</div>
+                    <h3 class="card-name">Monieca</h3>
+                    <p class="card-role">Recorder</p>
+                    <div class="card-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Reg. No</span>
+                            <span class="detail-value">250391771062137</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Department</span>
+                            <span class="detail-value dept-ece">ECE</span>
+                        </div>
+                    </div>
+                    <div class="card-skills">
+                        <span class="skill-tag">Documentation</span>
+                        <span class="skill-tag">Research</span>
+                        <span class="skill-tag">Recording</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mentor Section -->
+            <div class="mentor-section">
+                <h3 class="mentor-title">Our Mentor</h3>
+                <div class="mentor-card">
+                    <div class="mentor-avatar">👨‍🏫</div>
+                    <div class="mentor-info">
+                        <h4>Faculty Mentor</h4>
+                        <p>Thiagarajar College of Engineering</p>
+                        <p class="mentor-note">— Details to be updated —</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DESIGN THINKING ===== -->
+    <section class="section section-alt" id="design-thinking">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-tag">Our Approach</p>
+                <h2 class="section-title">Understanding Design Thinking</h2>
+                <p class="section-subtitle">A human-centered approach to innovation and problem solving.</p>
+            </div>
+
+            <!-- DT Process Steps -->
+            <div class="dt-process">
+                <div class="dt-step" data-step="1">
+                    <div class="step-icon">🎯</div>
+                    <h3>Empathize</h3>
+                    <p>Understand the user's needs through observation and engagement.</p>
+                </div>
+                <div class="dt-connector"></div>
+                <div class="dt-step" data-step="2">
+                    <div class="step-icon">📌</div>
+                    <h3>Define</h3>
+                    <p>Frame the right problem to solve based on user insights.</p>
+                </div>
+                <div class="dt-connector"></div>
+                <div class="dt-step" data-step="3">
+                    <div class="step-icon">💡</div>
+                    <h3>Ideate</h3>
+                    <p>Generate a broad range of creative solutions.</p>
+                </div>
+                <div class="dt-connector"></div>
+                <div class="dt-step" data-step="4">
+                    <div class="step-icon">🔧</div>
+                    <h3>Prototype</h3>
+                    <p>Build quick, tangible representations of ideas.</p>
+                </div>
+                <div class="dt-connector"></div>
+                <div class="dt-step" data-step="5">
+                    <div class="step-icon">✅</div>
+                    <h3>Test</h3>
+                    <p>Gather feedback and refine the solution iteratively.</p>
+                </div>
+            </div>
+
+            <!-- Problem Statement Placeholder -->
+            <div class="problem-section">
+                <div class="problem-card">
+                    <div class="problem-header">
+                        <span class="problem-badge">Problem Statement</span>
+                        <h3>Our Design Thinking Challenge</h3>
+                    </div>
+                    <div class="problem-body">
+                        <div class="placeholder-block">
+                            <span class="placeholder-icon">🔍</span>
+                            <p class="placeholder-text">Problem statement will be updated once finalized by the team.</p>
+                            <p class="placeholder-sub">Stay tuned — we're currently in the <strong>Empathize</strong> and <strong>Define</strong> phases.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DT Solution Example -->
+            <div class="solution-section">
+                <h3 class="solution-title">Design Thinking in Action — An Example</h3>
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <div class="solution-label">The Problem</div>
+                        <h4>Elevator Breakdown in a Busy Mall</h4>
+                        <p>During peak hours, a mall elevator breaks down, leaving elderly people and those with disabilities stranded on upper floors. Traditional stairs are not accessible for everyone.</p>
+                    </div>
+                    <div class="solution-arrow">→</div>
+                    <div class="solution-card solution-answer">
+                        <div class="solution-label">DT Solution</div>
+                        <h4>Inclusive Emergency Evacuation System</h4>
+                        <p>Design a portable stair-climbing wheelchair device and a real-time notification system that alerts nearby volunteers and staff to assist affected individuals immediately.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-tag">Our Work</p>
+                <h2 class="section-title">Projects & Gallery</h2>
+                <p class="section-subtitle">Existing and new projects explored through the Design Thinking lens.</p>
+            </div>
+
+            <!-- Project Type Tabs -->
+            <div class="project-tabs">
+                <button class="tab-btn active" data-tab="all">All</button>
+                <button class="tab-btn" data-tab="existing">Existing</button>
+                <button class="tab-btn" data-tab="new">New</button>
+                <button class="tab-btn" data-tab="redesign">Redesign</button>
+            </div>
+
+            <!-- Project Gallery -->
+            <div class="project-gallery">
+                <div class="project-item" data-category="existing">
+                    <div class="project-placeholder">
+                        <span>📸</span>
+                        <p>Project Image 1</p>
+                        <small>Upload your project photo here</small>
+                    </div>
+                    <div class="project-info">
+                        <h4>Existing Project</h4>
+                        <p>Description to be added</p>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="new">
+                    <div class="project-placeholder">
+                        <span>📸</span>
+                        <p>Project Image 2</p>
+                        <small>Upload your project photo here</small>
+                    </div>
+                    <div class="project-info">
+                        <h4>New Project</h4>
+                        <p>Description to be added</p>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="redesign">
+                    <div class="project-placeholder">
+                        <span>📸</span>
+                        <p>Project Image 3</p>
+                        <small>Upload your project photo here</small>
+                    </div>
+                    <div class="project-info">
+                        <h4>Redesigned Solution</h4>
+                        <p>Description to be added</p>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="existing">
+                    <div class="project-placeholder">
+                        <span>📸</span>
+                        <p>Project Image 4</p>
+                        <small>Upload your project photo here</small>
+                    </div>
+                    <div class="project-info">
+                        <h4>DT Setup</h4>
+                        <p>Description to be added</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MEDIA ===== -->
+    <section class="section section-alt" id="media">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-tag">References & Media</p>
+                <h2 class="section-title">Media & Videos</h2>
+                <p class="section-subtitle">Video references, movie clips, and social media content related to our project.</p>
+            </div>
+
+            <!-- Video Section -->
+            <div class="media-grid">
+                <div class="media-card">
+                    <div class="media-placeholder video-placeholder">
+                        <span>🎬</span>
+                        <p>Video / Movie Clip Reference</p>
+                        <small>Embed your video link here</small>
+                    </div>
+                    <div class="media-info">
+                        <h4>Reference Video 1</h4>
+                        <p>Movie clip or DT reference — to be added</p>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <div class="media-placeholder video-placeholder">
+                        <span>🎬</span>
+                        <p>Video / Movie Clip Reference</p>
+                        <small>Embed your video link here</small>
+                    </div>
+                    <div class="media-info">
+                        <h4>Reference Video 2</h4>
+                        <p>Social media content — to be added</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-section">
+                <h3 class="social-title">Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-btn" title="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="#" class="social-btn" title="YouTube">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                        <span>YouTube</span>
+                    </a>
+                    <a href="#" class="social-btn" title="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">⚡</span>
+                    <span>The Overclocked</span>
+                </div>
+                <p class="footer-college">Thiagarajar College of Engineering, Madurai</p>
+                <p class="footer-copy">&copy; 2026 Team The Overclocked — Design Thinking Project</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
