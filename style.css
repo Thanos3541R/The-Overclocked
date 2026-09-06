@@ -1,6 +1,7 @@
 /* ==========================================
    THE OVERCLOCKED — Design Thinking Website
    Clean, Modern, Aesthetic Stylesheet
+   Enhanced with scroll effects
    ========================================== */
 
 /* ===== CSS VARIABLES ===== */
@@ -63,6 +64,71 @@ a {
 img {
     max-width: 100%;
     display: block;
+}
+
+/* ===== SCROLL PROGRESS BAR ===== */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: var(--gradient-1);
+    z-index: 1001;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 10px rgba(108, 99, 255, 0.5);
+}
+
+/* ===== SCROLL REVEAL SYSTEM ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slide from left variant */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Slide from right variant */
+.reveal-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Scale up variant */
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.revealed {
+    opacity: 1;
+    transform: scale(1);
 }
 
 /* ===== NAVIGATION ===== */
@@ -201,6 +267,7 @@ img {
     border-radius: 50%;
     filter: blur(100px);
     opacity: 0.3;
+    will-change: transform;
 }
 
 .shape-1 {
@@ -285,6 +352,13 @@ img {
     flex-direction: column;
     align-items: center;
     gap: 4px;
+    transition: var(--transition);
+}
+
+.hero-badge:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(108, 99, 255, 0.15);
 }
 
 .badge-label {
@@ -326,6 +400,30 @@ img {
     cursor: pointer;
     border: none;
     font-family: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle shimmer on hover */
+.btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255,255,255,0.08) 50%,
+        transparent 100%
+    );
+    transform: rotate(30deg) translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.btn:hover::after {
+    transform: rotate(30deg) translateX(100%);
 }
 
 .btn-primary {
@@ -398,10 +496,24 @@ img {
 /* ===== SECTIONS ===== */
 .section {
     padding: 100px 0;
+    position: relative;
 }
 
 .section-alt {
     background: var(--bg-alt);
+}
+
+/* Subtle section divider glow line */
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 400px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(108, 99, 255, 0.3), transparent);
 }
 
 .section-header {
@@ -451,9 +563,9 @@ img {
     text-align: center;
     position: relative;
     overflow: hidden;
-    transition: var(--transition);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
 }
 
 .team-card.visible {
@@ -462,9 +574,29 @@ img {
 }
 
 .team-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
     border-color: var(--primary);
-    box-shadow: 0 8px 32px rgba(108, 99, 255, 0.15);
+    box-shadow: 0 12px 40px rgba(108, 99, 255, 0.2);
+}
+
+/* Subtle glow effect on card hover */
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: var(--radius-lg);
+    background: var(--gradient-1);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s;
+    filter: blur(8px);
+}
+
+.team-card:hover::before {
+    opacity: 0.15;
 }
 
 .card-accent {
@@ -489,6 +621,11 @@ img {
     font-size: 1.8rem;
     font-weight: 700;
     color: white;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-card:hover .card-avatar {
+    transform: scale(1.1);
 }
 
 .card-name {
@@ -553,6 +690,12 @@ img {
     border-radius: 50px;
     font-size: 0.78rem;
     font-weight: 500;
+    transition: var(--transition);
+}
+
+.skill-tag:hover {
+    background: rgba(108, 99, 255, 0.2);
+    transform: translateY(-1px);
 }
 
 /* ===== MENTOR ===== */
@@ -567,14 +710,28 @@ img {
     color: var(--text-muted);
 }
 
+.mentor-cards-row {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
 .mentor-card {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 20px;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 24px 40px;
+    padding: 24px 36px;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mentor-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(108, 99, 255, 0.15);
 }
 
 .mentor-avatar {
@@ -592,9 +749,9 @@ img {
     font-size: 0.9rem;
 }
 
-.mentor-note {
+.mentor-college {
     color: var(--text-dim) !important;
-    font-style: italic;
+    font-size: 0.8rem !important;
 }
 
 /* ===== DESIGN THINKING ===== */
@@ -614,19 +771,24 @@ img {
     padding: 28px 24px;
     text-align: center;
     width: 180px;
-    transition: var(--transition);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
 }
 
 .dt-step:hover {
     border-color: var(--primary);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(108, 99, 255, 0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(108, 99, 255, 0.2);
 }
 
 .step-icon {
     font-size: 2rem;
     margin-bottom: 12px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dt-step:hover .step-icon {
+    transform: scale(1.2);
 }
 
 .dt-step h3 {
@@ -646,6 +808,25 @@ img {
     height: 2px;
     background: var(--border);
     flex-shrink: 0;
+    position: relative;
+}
+
+/* Animated pulse on connector */
+.dt-connector::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, transparent, rgba(108, 99, 255, 0.4), transparent);
+    border-radius: 3px;
+    animation: connectorPulse 3s ease-in-out infinite;
+}
+
+@keyframes connectorPulse {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
 }
 
 /* Problem Section */
@@ -660,6 +841,12 @@ img {
     overflow: hidden;
     max-width: 800px;
     margin: 0 auto;
+    transition: var(--transition);
+}
+
+.problem-card:hover {
+    border-color: rgba(255, 107, 107, 0.3);
+    box-shadow: 0 8px 32px rgba(255, 107, 107, 0.1);
 }
 
 .problem-header {
@@ -693,6 +880,11 @@ img {
     padding: 24px;
     border: 2px dashed var(--border);
     border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.placeholder-block:hover {
+    border-color: rgba(108, 99, 255, 0.3);
 }
 
 .placeholder-icon {
@@ -738,6 +930,11 @@ img {
     padding: 32px;
     flex: 1;
     min-width: 280px;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.solution-card:hover {
+    transform: translateY(-4px);
 }
 
 .solution-card.solution-answer {
@@ -781,6 +978,12 @@ img {
     color: var(--primary);
     padding: 0 16px;
     font-weight: 700;
+    animation: arrowPulse 2s ease-in-out infinite;
+}
+
+@keyframes arrowPulse {
+    0%, 100% { opacity: 0.5; transform: translateX(0); }
+    50% { opacity: 1; transform: translateX(4px); }
 }
 
 /* ===== PROJECTS ===== */
@@ -827,13 +1030,13 @@ img {
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     overflow: hidden;
-    transition: var(--transition);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .project-item:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
     border-color: var(--primary);
-    box-shadow: 0 8px 24px rgba(108, 99, 255, 0.15);
+    box-shadow: 0 12px 32px rgba(108, 99, 255, 0.2);
 }
 
 .project-item.hidden {
@@ -849,6 +1052,11 @@ img {
     background: var(--surface);
     border-bottom: 1px solid var(--border);
     color: var(--text-dim);
+    transition: var(--transition);
+}
+
+.project-item:hover .project-placeholder {
+    background: rgba(108, 99, 255, 0.05);
 }
 
 .project-placeholder span {
@@ -894,12 +1102,13 @@ img {
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     overflow: hidden;
-    transition: var(--transition);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .media-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
     border-color: var(--primary);
+    box-shadow: 0 12px 32px rgba(108, 99, 255, 0.2);
 }
 
 .video-placeholder {
@@ -911,6 +1120,11 @@ img {
     background: var(--surface);
     border-bottom: 1px solid var(--border);
     color: var(--text-dim);
+    transition: var(--transition);
+}
+
+.media-card:hover .video-placeholder {
+    background: rgba(108, 99, 255, 0.05);
 }
 
 .video-placeholder span {
@@ -972,14 +1186,14 @@ img {
     border-radius: var(--radius);
     color: var(--text-muted);
     font-weight: 500;
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .social-btn:hover {
     border-color: var(--primary);
     color: var(--text);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(108, 99, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(108, 99, 255, 0.2);
 }
 
 .social-btn svg {
@@ -990,6 +1204,19 @@ img {
 .footer {
     border-top: 1px solid var(--border);
     padding: 40px 0;
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 400px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(108, 99, 255, 0.4), transparent);
 }
 
 .footer-content {
@@ -1018,7 +1245,7 @@ img {
     font-size: 0.8rem;
 }
 
-/* ===== ANIMATIONS ===== */
+/* ===== HERO ANIMATIONS ===== */
 .animate-in {
     opacity: 0;
     transform: translateY(20px);
@@ -1036,6 +1263,12 @@ img {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* ===== TILT EFFECT (applied via JS) ===== */
+.tilt-card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -1070,6 +1303,14 @@ img {
         height: 30px;
     }
 
+    .dt-connector::after {
+        width: 6px;
+        height: 100%;
+        left: -2px;
+        top: 0;
+        background: linear-gradient(180deg, transparent, rgba(108, 99, 255, 0.4), transparent);
+    }
+
     .dt-step {
         width: 100%;
         max-width: 320px;
@@ -1085,6 +1326,11 @@ img {
         padding: 8px 0;
     }
 
+    @keyframes arrowPulse {
+        0%, 100% { opacity: 0.5; transform: rotate(90deg) translateX(0); }
+        50% { opacity: 1; transform: rotate(90deg) translateX(4px); }
+    }
+
     .hero-badge {
         flex: 1;
         min-width: 140px;
@@ -1092,6 +1338,11 @@ img {
 
     .team-grid {
         grid-template-columns: 1fr;
+    }
+
+    .mentor-cards-row {
+        flex-direction: column;
+        align-items: center;
     }
 
     .mentor-card {
