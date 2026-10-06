@@ -875,6 +875,91 @@ img {
     padding: 40px 32px;
 }
 
+.problem-content-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.problem-status-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    background: rgba(108, 99, 255, 0.12);
+    border: 1px solid rgba(108, 99, 255, 0.3);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-light);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 10px #4ade80;
+    animation: statusPulse 2s infinite;
+}
+
+@keyframes statusPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.problem-statement-text {
+    font-size: 1.08rem;
+    line-height: 1.8;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 3px solid var(--primary);
+    padding: 18px 22px;
+    border-radius: 0 12px 12px 0;
+}
+
+.problem-key-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 6px;
+}
+
+.key-point {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.key-point:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.kp-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.key-point strong {
+    color: var(--text);
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.9rem;
+}
+
+.key-point span {
+    line-height: 1.5;
+}
+
 .placeholder-block {
     text-align: center;
     padding: 24px;
@@ -1076,6 +1161,35 @@ img {
 
 .project-info {
     padding: 20px;
+}
+
+.project-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.badge-existing {
+    background: rgba(255, 107, 107, 0.15);
+    color: var(--accent);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.badge-new {
+    background: rgba(108, 99, 255, 0.15);
+    color: var(--primary-light);
+    border: 1px solid rgba(108, 99, 255, 0.3);
+}
+
+.badge-redesign {
+    background: rgba(79, 195, 247, 0.15);
+    color: #4fc3f7;
+    border: 1px solid rgba(79, 195, 247, 0.3);
 }
 
 .project-info h4 {
